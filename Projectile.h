@@ -1,5 +1,10 @@
 #pragma once
 #include "Entity.h"
+enum class PROJECTILE_TYPES
+{
+	STANDARD,
+	HOMING
+};
 
 class Projectile
 {
@@ -11,8 +16,13 @@ private:
 	sf::Sprite sprite;
 	sf::Vector2f direction = sf::Vector2f(0, 0);
 	bool active = false;
+	PROJECTILE_TYPES type = PROJECTILE_TYPES::STANDARD;
 
 public:
+	PROJECTILE_TYPES getProjectileType();
+	sf::RectangleShape shadow;
+	sf::Vector2f targetDirection = sf::Vector2f(0, 0);
+	void setProjectileType(PROJECTILE_TYPES type);
 	sf::Vector2f getSpeedOffset();
 	void setSpeedOffset(sf::Vector2f offset);
 	sf::RectangleShape rect;

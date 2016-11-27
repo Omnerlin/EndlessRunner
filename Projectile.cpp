@@ -2,6 +2,16 @@
 
 
 
+PROJECTILE_TYPES Projectile::getProjectileType()
+{
+	return this->type;
+}
+
+void Projectile::setProjectileType(PROJECTILE_TYPES type)
+{
+	this->type = type;
+}
+
 sf::Vector2f Projectile::getSpeedOffset()
 {
 	return speedOffset;
@@ -49,7 +59,9 @@ sf::Vector2f Projectile::getSpeed()
 
 Projectile::Projectile()
 {
-	rect.setSize(sf::Vector2f(15, 15));
+	rect.setSize(sf::Vector2f(20, 20));
+	shadow.setSize(rect.getSize());
+	shadow.setFillColor(sf::Color(0, 0, 0, 60));
 }
 
 
