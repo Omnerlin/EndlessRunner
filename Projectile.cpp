@@ -1,7 +1,5 @@
 #include "Projectile.h"
 
-
-
 PROJECTILE_TYPES Projectile::getProjectileType()
 {
 	return this->type;
@@ -47,6 +45,11 @@ float Projectile::getBaseMoveSpeed()
 	return baseMoveSpeed;
 }
 
+void Projectile::setBaseMoveSpeed(float speed)
+{
+	this->baseMoveSpeed = speed;
+}
+
 sf::Vector2f Projectile::getDirection()
 {
 	return direction;
@@ -59,7 +62,7 @@ sf::Vector2f Projectile::getSpeed()
 
 Projectile::Projectile()
 {
-	rect.setSize(sf::Vector2f(20, 20));
+	rect.setSize(sf::Vector2f(16, 16));
 	shadow.setSize(rect.getSize());
 	shadow.setFillColor(sf::Color(0, 0, 0, 60));
 }

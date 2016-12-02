@@ -92,7 +92,7 @@ void Enemy::reset()
 
 Enemy::Enemy()
 {
-	rect.setSize(sf::Vector2f(50, 50));
+	rect.setSize(sf::Vector2f(40, 40));
 	shadow.setSize(rect.getSize());
 	shadow.setFillColor(sf::Color(0, 0, 0, 70));
 	Projectile projectile;

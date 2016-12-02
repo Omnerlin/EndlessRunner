@@ -12,8 +12,6 @@ private:
 	float baseMoveSpeed = 1400.f;
 	sf::Vector2f speed = sf::Vector2f(0, 0);
 	sf::Vector2f speedOffset = sf::Vector2f(0,0);
-	sf::Texture texture;
-	sf::Sprite sprite;
 	sf::Vector2f direction = sf::Vector2f(0, 0);
 	bool active = false;
 	PROJECTILE_TYPES type = PROJECTILE_TYPES::STANDARD;
@@ -31,6 +29,7 @@ public:
 	void setActive(bool active);
 	void setSpeed(sf::Vector2f speed);
 	float getBaseMoveSpeed();
+	void setBaseMoveSpeed(float speed);
 	sf::Vector2f getDirection();
 	sf::Vector2f getSpeed();
 	Projectile();

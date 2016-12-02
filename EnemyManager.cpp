@@ -82,12 +82,15 @@ void EnemyManager::updateEnemyMovement(float deltaTime)
 
 void EnemyManager::updateEnemyColors(float deltaTime)
 {
-	float colorChangeRate = 525;
+	float newRed;
+	float newBlue;
+	float newGreen;
+	float colorChangeRate = 0.03;
 	for (int i = 0; i < enemies.size(); i++) {
 		if (enemies[i].getActive() == true) {
 			if (enemies[i].rect.getFillColor() != enemies[i].idleColor) {
 				if (enemies[i].rect.getFillColor().r > enemies[i].idleColor.r) {
-					int newRed = enemies[i].rect.getFillColor().r - colorChangeRate * deltaTime;
+					newRed = enemies[i].rect.getFillColor().r - colorChangeRate * deltaTime;
 					if (newRed < 0) {
 						newRed = 0;
 					}
@@ -99,7 +102,7 @@ void EnemyManager::updateEnemyColors(float deltaTime)
 
 
 				if (enemies[i].rect.getFillColor().g > enemies[i].idleColor.g) {
-					int newGreen = enemies[i].rect.getFillColor().g - colorChangeRate * deltaTime;
+					newGreen = enemies[i].rect.getFillColor().g - colorChangeRate * deltaTime;
 					if (newGreen < 0) {
 						newGreen = 0;
 					}
@@ -111,7 +114,7 @@ void EnemyManager::updateEnemyColors(float deltaTime)
 
 
 				if (enemies[i].rect.getFillColor().b > enemies[i].idleColor.b) {
-					int newBlue = enemies[i].rect.getFillColor().g - colorChangeRate * deltaTime;
+					newBlue = enemies[i].rect.getFillColor().g - colorChangeRate * deltaTime;
 					if (newBlue < 0) {
 						newBlue = 0;
 					}

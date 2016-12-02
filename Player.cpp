@@ -43,6 +43,15 @@ void Player::setProjectileDamage(float damage)
 	this->projectileDamage = damage;
 }
 
+void Player::setScore(int score){
+	this->score = score;
+}
+
+int Player::getScore()
+{
+	return score;
+}
+
 float Player::getHealth()
 {
 	return health;
@@ -70,7 +79,11 @@ bool Player::isAlive()
 
 Player::Player()
 {
-	rect.setSize(sf::Vector2f(45, 45));
+	rect.setSize(sf::Vector2f(35, 35));
+	shield.setDefaultSize(sf::Vector2f(rect.getSize().x * 2, rect.getSize().y * 2));
+	shield.rect.setSize(shield.getDefaultSize());
+	shield.rect.setOrigin(sf::Vector2f(shield.rect.getGlobalBounds().width / 2, shield.rect.getGlobalBounds().height / 2));
+	shield.rect.setScale(0, 0);
 	rect.setFillColor(idleColor);
 	shadow.setFillColor(sf::Color(0, 0, 0, 70));
 	shadow.setSize(rect.getSize());

@@ -8,9 +8,11 @@ void ProjectileManager::setProjectileType(PROJECTILE_TYPES type)
 		projectiles[i].setProjectileType(type);
 		if (type == PROJECTILE_TYPES::STANDARD) {
 			projectiles[i].rect.setFillColor(sf::Color::White);
+			projectiles[i].setBaseMoveSpeed(1000);
 		}
 		else if (type == PROJECTILE_TYPES::HOMING) {
 			projectiles[i].rect.setFillColor(sf::Color::Yellow);
+			projectiles[i].setBaseMoveSpeed(900);
 		}
 	}
 }

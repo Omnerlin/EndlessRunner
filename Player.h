@@ -1,4 +1,5 @@
 #pragma once
+#include "Shield.h"
 #include "Entity.h"
 #include "ProjectileManager.h"
 
@@ -11,13 +12,17 @@ private:
 	bool alive = true;
 	float fireCooldown = 0.20f; // In Seconds!
 	float projectileDamage = 25.f;
-	float injuredThreshold = 2.0f;
+	float injuredThreshold = 0.2f;
 	float timeInjured = injuredThreshold;
 	bool injured = false;
+	
+	int score = 0;
 
 	sf::Color idleColor = sf::Color(160, 255, 170, 255);
 	sf::Color hurtColor = sf::Color(200, 0, 0, 90);
 public:
+	float timeAlive = 0;
+	Shield shield;
 	float getTimeInjured();
 	bool getInjured();
 	void setInjured(bool injured);
@@ -25,7 +30,8 @@ public:
 	float getInjuredThreshold();
 	float getProjectileDamage();
 	void setProjectileDamage(float damage);
-
+	void setScore(int score);
+	int getScore();
 	float timeSinceLastFire = 0.f;
 	sf::RectangleShape shadow;
 	ProjectileManager projectileManager;

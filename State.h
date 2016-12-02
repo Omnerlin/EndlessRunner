@@ -4,7 +4,8 @@ enum class STATE_TYPE
 {
 	MAIN_MENU,
 	GAMELOOP,
-	QUIT
+	QUIT,
+	RESTART
 };
 
 class State
